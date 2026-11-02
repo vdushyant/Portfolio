@@ -6,13 +6,9 @@ import {
 import Pager from '@/components/pager';
 import { Badge } from '@/components/ui/badge';
 import { skillGroups } from '@/constants';
-import { Code2 } from 'lucide-react';
-import type { IconType } from 'react-icons';
+import { Activity, Cloud, Code2, Database } from 'lucide-react';
+import type { ComponentType } from 'react';
 import {
-  SiAmazonec2,
-  SiAmazonrds,
-  SiAmazons3,
-  SiAmazonwebservices,
   SiC,
   SiCplusplus,
   SiDocker,
@@ -23,12 +19,10 @@ import {
   SiHibernate,
   SiJunit5,
   SiMongodb,
-  SiOracle,
   SiPostgresql,
   SiPostman,
   SiRailway,
   SiRedis,
-  SiSonarcloud,
   SiSpring,
   SiSpringboot,
   SiSpringsecurity,
@@ -58,7 +52,7 @@ import {
   siSpringsecurity,
 } from 'simple-icons';
 
-const skillIcons: Record<string, IconType> = {
+const skillIcons: Record<string, ComponentType<{ className?: string }>> = {
   C: SiC,
   'C++': SiCplusplus,
   Bash: SiGnubash,
@@ -66,12 +60,12 @@ const skillIcons: Record<string, IconType> = {
   'Spring Web': SiSpring,
   'Spring Security': SiSpringsecurity,
   Hibernate: SiHibernate,
-  AWS: SiAmazonwebservices,
-  'AWS EC2': SiAmazonec2,
-  'AWS S3': SiAmazons3,
-  'AWS CloudFront': SiAmazonwebservices,
-  'Amazon RDS': SiAmazonrds,
-  Oracle: SiOracle,
+  AWS: Cloud,
+  'AWS EC2': Cloud,
+  'AWS S3': Cloud,
+  'AWS CloudFront': Cloud,
+  'Amazon RDS': Database,
+  Oracle: Database,
   PostgreSQL: SiPostgresql,
   MongoDB: SiMongodb,
   Redis: SiRedis,
@@ -82,7 +76,7 @@ const skillIcons: Record<string, IconType> = {
   GitHub: SiGithub,
   Postman: SiPostman,
   JUnit: SiJunit5,
-  SonarCloud: SiSonarcloud,
+  SonarCloud: Activity,
 };
 
 const skills = skillGroups.flatMap((group) => group.items);
